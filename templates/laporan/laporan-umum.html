@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Aplikasi Keuangan</title>
+  </head>
+  <body>
+     <!-- Sidebar -->
+     <div class="sidebar">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="input-data.html" class="nav-link">Input Data</a>
+        <a href="laporan-umum.html" class="nav-link">Laporan Umum</a>
+        <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Laporan Program
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="sedekahsubuh.html">Sedekah Subuh</a></li>
+                <li><a class="dropdown-item" href="selima.html">Selima</a></li>
+                <li><a class="dropdown-item" href="senasbung.html">Senasbung</a></li>
+                <li><a class="dropdown-item" href="getas.html">Getas</a></li>
+                <li><a class="dropdown-item" href="upgn.html">UPGN</a></li>
+                <li><a class="dropdown-item" href="ujirohis.html">UJIROHIS</a></li>
+                <li><a class="dropdown-item" href="wakaf.html">Wakaf</a></li>
+                <li><a class="dropdown-item" href="lelang.html">Lelang</a></li>
+                <li><a class="dropdown-item" href="zakat.html">Zakat</a></li>
+                <!-- <li><a class="dropdown-item" href="#transaksi-cash">Transaksi Cash</a></li> -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <!-- Section Beranda -->
+        <div id="beranda" class="section">
+            <h1>Laporan Umum</h1>
+            <p>Selamat datang di halaman laporan umum. Berisi seluruh transaksi dengan kategori hari dan bulan</p>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="colspan3">Hari Ini</th>
+              </tr>
+              <tr>
+                <th scope="col">Tanggal Transaksi</th>
+                <th scope="col">Nominal</th>
+                <th scope="col">Tujuan Program</th>
+                <th scope="col">Sumber Dana</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">10 Oktober 2024</th>
+                <td>Rp. 100.000</td>
+                <td>Selima</td>
+                <td>Kas Selima</td>
+              </tr>
+              <tr>
+                <th scope="row">11 Oktober 2024</th>
+                <td>Rp. 200.000</td>
+                <td>Senasbung</td>
+                <td>Donatur</td>
+              </tr>
+              <tr>
+                <th scope="row">12 Oktober 2024</th>
+                <td>Rp. 50.000</td>
+                <td>Zakat</td>
+                <td>Donatur</td>
+              </tr>
+              <tr>
+                <th scope="colspan3">Bulan Ini</th>
+              </tr>
+              <tr>
+                <th scope="col">Tanggal Transaksi</th>
+                <th scope="col">Nominal</th>
+                <th scope="col">Tujuan Program</th>
+                <th scope="col">Sumber Dana</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">10 Oktober 2024</th>
+                <td>Rp. 100.000</td>
+                <td>Selima</td>
+                <td>Kas Selima</td>
+              </tr>
+              <tr>
+                <th scope="row">11 Oktober 2024</th>
+                <td>Rp. 200.000</td>
+                <td>Senasbung</td>
+                <td>Donatur</td>
+              </tr>
+              <tr>
+                <th scope="row">12 Oktober 2024</th>
+                <td>Rp. 50.000</td>
+                <td>Zakat</td>
+                <td>Donatur</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

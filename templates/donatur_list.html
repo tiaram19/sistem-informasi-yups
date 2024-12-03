@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donatur List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Donatur List</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID Donatur</th>
+                    <th>Nama Donatur</th>
+                    <th>No Telp</th>
+                    <th>No WA</th>
+                    <th>Alamat</th>
+                    <th>Tipe Donatur</th>
+                    <th>Status Keanggotaan</th>
+                    <th>Tgl Gabung</th>
+                    <th>Tgl Lahir</th>
+                    <th>Kota Lahir</th>
+                    <th>Kelurahan</th>
+                    <th>Kecamatan</th>
+                    <th>Kode Pos</th>
+                    <th>Propinsi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for donatur in donatur_data %}
+                <tr>
+                    <td>{{ donatur.ID_Donatur }}</td>
+                    <td>{{ donatur.Nama_Donatur }}</td>
+                    <td>{{ donatur.no_telp }}</td>
+                    <td>{{ donatur.no_wa }}</td>
+                    <td>{{ donatur.Alamat }}</td>
+                    <td>{{ donatur.Tipe_Donatur }}</td>
+                    <td>{{ donatur.Status_Keanggotaan }}</td>
+                    <td>{{ donatur.Tgl_gabung }}</td>
+                    <td>{{ donatur.Tgl_lahir }}</td>
+                    <td>{{ donatur.Kota_lahir }}</td>
+                    <td>{{ donatur.Kelurahan }}</td>
+                    <td>{{ donatur.Kecamatan }}</td>
+                    <td>{{ donatur.Kode_pos }}</td>
+                    <td>{{ donatur.Propinsi }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

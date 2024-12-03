@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Data Donatur</title>
+  </head>
+  <body>
+    <body>
+        <div class="sidebar">
+          <a href="data_donatur.html" class="nav-link">Formulir Donatur</a>
+          <a href="datadonaturtersimpan.html" class="nav-link">Data Donatur</a>
+          <a href="dashboard.html" class="nav-link">Kembali Ke Dashboard</a>
+        </div>
+        <!-- Main content -->
+        <div class="content">
+          <h1>Data Donatur Tersimpan</h1>
+          <div class="container mt-5">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Nama Donatur</th>
+                  <th>Nomor Telepon</th>
+                  <th>Nomor WhatsApp</th>
+                  <th>Tipe Donatur</th>
+                  <th>Status Keanggotaan</th>
+                  <th>Tanggal Gabung</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Kota Lahir</th>
+                  <th>Alamat</th>
+                  <th>Kelurahan</th>
+                  <th>Kecamatan</th>
+                  <th>Kode Pos</th>
+                  <th>Propinsi</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="donaturTableBody">
+                <!-- Data donatur akan ditambahkan di sini -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <script>
+          // Mendapatkan data donatur dari localStorage
+          function getDonaturData() {
+            return JSON.parse(localStorage.getItem("donaturData")) || [];
+          }
+    
+          // Fungsi untuk menampilkan data donatur dalam tabel
+          function renderDonaturTable() {
+            const donaturData = getDonaturData();
+            const donaturTableBody = document.getElementById("donaturTableBody");
+            donaturTableBody.innerHTML = ""; // Hapus konten sebelumnya
+    
+            donaturData.forEach((donatur, index) => {
+              const row = document.createElement("tr");
+    
+              row.innerHTML = `
+                <td>${donatur.namaDonatur}</td>
+                <td>${donatur.nomorTeleponDonatur}</td>
+                <td>${donatur.nomorWhatsappDonatur}</td>
+                <td>${donatur.tipeDonatur}</td>
+                <td>${donatur.statusKeanggotaanDonatur}</td>
+                <td>${new Date(donatur.tanggalGabung).toLocaleDateString()}</td>
+                <td>${new Date(donatur.tanggalLahir).toLocaleDateString()}</td>
+                <td>${donatur.kotaLahirDonatur}</td>
+                <td>${donatur.alamatDonatur}</td>
+                <td>${donatur.kelurahanDonatur}</td>
+                <td>${donatur.kecamatanDonatur}</td>
+                <td>${donatur.kodeposDonatur}</td>
+                <td>${donatur.propinsiDonatur}</td>
+                <td><button onclick="deleteDonatur(${index})" class="btn btn-danger">Hapus</button></td>
+              `;
+    
+              donaturTableBody.appendChild(row);
+            });
+          }
+    
+          // Fungsi untuk menghapus data donatur berdasarkan indeks
+          function deleteDonatur(index) {
+            const donaturData = getDonaturData();
+            donaturData.splice(index, 1); // Hapus data dari array berdasarkan indeks
+            localStorage.setItem("donaturData", JSON.stringify(donaturData)); // Simpan kembali ke localStorage
+            renderDonaturTable(); // Perbarui tampilan tabel
+          }
+    
+          // Panggil fungsi untuk menampilkan data saat halaman dimuat
+          renderDonaturTable();
+        </script>
+      </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+ 
+</script>
+

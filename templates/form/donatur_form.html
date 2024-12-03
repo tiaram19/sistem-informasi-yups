@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <title>Formulir Data Donatur</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="/donatur" class="nav-link">Formulir Donatur</a>
+      <a href="/donatur_list" class="nav-link">Data Donatur</a>
+      <a href="dashboard" class="nav-link">Kembali Ke Dashboard</a>
+    </div>
+    <!-- Main content -->
+    <div class="content">
+      <h1>Input Data Donatur</h1>
+      <div class="container mt-5">
+        <h2 class="mb-4">Formulir Donatur</h2>
+        <form method="post" onsubmit="{{ url_for('add_donatur') }}">
+          <!-- Sumber Dana -->
+          <div class="mb-3">
+            <label for="Nama_Donatur" class="form-label">Nama Donatur</label>
+            <input type="text" class="form-control" id="Nama_Donatur" name="Nama_Donatur" placeholder="Masukkan nama donatur" required />
+          </div>
+          <div class="mb-3">
+            <label for="no_telp" class="form-label">Nomor Telepon</label>
+            <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="Masukkan nomor telepon donatur" required />
+          </div>
+          <div class="mb-3">
+            <label for="no_wa" class="form-label">Nomor WhatsApp</label>
+            <input type="text" class="form-control" id="no_wa" name="no_wa" placeholder="Masukkan nomor WhatsApp donatur" required />
+          </div>
+          <div class="mb-3">
+            <label for="Alamat" class="form-label">Alamat</label>
+            <input type="text" class="form-control" id="Alamat" name="Alamat" placeholder="Masukkan nomor WhatsApp donatur" required />
+          </div>
+          <div class="mb-3">
+            <label for="Tipe_Donatur" class="form-label">Tipe Donatur</label>
+            <select class="form-select" id="Tipe_Donatur" name="Tipe_Donatur" required>
+              <option value="" selected>Pilih Kategori</option>
+              <option value="Individu">Individu</option>
+              <option value="Perusahaan">Perusahaan</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="Status_Keanggotaan" class="form-label">Status Keanggotaan</label>
+            <select class="form-select" id="Status_Keanggotaan" name="Status_Keanggotaan">
+              <option value="" selected>Pilih Kategori</option>
+              <option value="Tetap">Tetap</option>
+              <option value="Satu_Kali">Satu Kali</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="Tgl_gabung" class="form-label">Tanggal Gabung</label>
+            <input type="date" class="form-control" id="Tgl_gabung" name="Tgl_gabung" required />
+          </div>
+          <div class="mb-3">
+            <label for="Tgl_lahir" class="form-label">Tanggal Lahir</label>
+            <input type="date" class="form-control" id="Tgl_lahir" name="Tgl_lahir" required />
+          </div>
+          <div class="mb-3">
+            <label for="Kota_lahir" class="form-label">Kota Lahir</label>
+            <input type="text" class="form-control" id="Kota_lahir" name="Kota_lahir" placeholder="Masukkan tempat lahir donatur" />
+          </div>
+          <!-- <div class="mb-3" id="alamatDonaturContainer">
+            <label for="alamatDonatur" class="form-label">Alamat Donatur</label>
+            <input type="text" class="form-control" id="alamatDonatur" placeholder="Masukkan alamat donatur" />
+          </div> -->
+          <div class="mb-3">
+            <label for="Kelurahan" class="form-label">Kelurahan</label>
+            <input type="text" class="form-control" id="Kelurahan" name="Kelurahan" placeholder="Masukkan alamat donatur" />
+          </div>
+          <div class="mb-3">
+            <label for="Kecamatan" class="form-label">Kecamatan</label>
+            <input type="text" class="form-control" id="Kecamatan" name="Kecamatan" placeholder="Masukkan alamat donatur" />
+          </div>
+          <div class="mb-3">
+            <label for="Kode_pos" class="form-label">Kode Pos</label>
+            <input type="text" class="form-control" id="Kode_pos" name="Kode_pos" placeholder="Masukkan kode pos donatur" />
+          </div>
+          <div class="mb-3">
+            <label for="Propinsi" class="form-label">Propinsi</label>
+            <input type="text" class="form-control" id="Propinsi" name="Propinsi" placeholder="Masukkan alamat donatur" />
+          </div>
+          <!-- Submit Button -->
+          <div><button type="submit" class="btn btn-primary">Simpan</button></div>
+        </form>
+      </div>
+    </div>
+  </body>
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+  </html>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script></script>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Donatur</title>
+</head>
+<body>
+    <h2>Form Donatur</h2>
+    <form method="POST">
+        <label for="Nama_Donatur">Nama Donatur:</label>
+        <input type="text" id="Nama_Donatur" name="Nama_Donatur" required><br>
+
+        <label for="no_telp">No Telepon:</label>
+        <input type="text" id="no_telp" name="no_telp"><br>
+
+        <label for="no_wa">No WA:</label>
+        <input type="text" id="no_wa" name="no_wa"><br>
+
+        <label for="Alamat">Alamat:</label>
+        <textarea id="Alamat" name="Alamat"></textarea><br>
+
+        <label for="Tipe_Donatur">Tipe Donatur:</label>
+        <select id="Tipe_Donatur" name="Tipe_Donatur" required>
+            <option value="Individu">Individu</option>
+            <option value="Perusahaan">Perusahaan</option>
+        </select><br>
+
+        <label for="Status_Keanggotaan">Status Keanggotaan:</label>
+        <select id="Status_Keanggotaan" name="Status_Keanggotaan">
+            <option value="Tetap">Tetap</option>
+            <option value="Satu_Kali">Satu Kali</option>
+        </select><br>
+
+        <label for="Tgl_gabung">Tanggal Gabung:</label>
+        <input type="date" id="Tgl_gabung" name="Tgl_gabung"><br>
+
+        <label for="Tgl_lahir">Tanggal Lahir:</label>
+        <input type="date" id="Tgl_lahir" name="Tgl_lahir"><br>
+
+        <label for="Kota_lahir">Kota Lahir:</label>
+        <input type="text" id="Kota_lahir" name="Kota_lahir"><br>
+
+        <label for="Kelurahan">Kelurahan:</label>
+        <input type="text" id="Kelurahan" name="Kelurahan"><br>
+
+        <label for="Kecamatan">Kecamatan:</label>
+        <input type="text" id="Kecamatan" name="Kecamatan"><br>
+
+        <label for="Kode_pos">Kode Pos:</label>
+        <input type="text" id="Kode_pos" name="Kode_pos"><br>
+
+        <label for="Propinsi">Propinsi:</label>
+        <input type="text" id="Propinsi" name="Propinsi"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html> -->
